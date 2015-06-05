@@ -18,7 +18,7 @@ class BrowserHandler(BaseHandler):
         k = db.lrange('msgs', 0, MAX_MSGS)
         if k is None:
             k = ['no messages right now']
-        self.write(repr(self.request))
+        k.append(self.request.remote_ip)
         self.write(loader.load("main.html").generate(keywords=k))
         self.finish()
 
