@@ -51,15 +51,17 @@
 </head>
 <body>
 
+<form onsubmit="submit" method="POST">
+    <label>speak: <input type="text" name="utterance" value="i'm at the chalkboard" onclick='javascript: this.value = ""' /></label>
+<input type="submit" value="Submit" />
+</form>
+
 {% for k in keywords %}
 <div id="d{{k.split('|')[-1].split('.')[-1]}}"><strong>{{k.split('|')[0]}}</strong></div>
 {% end for %}
 
 
-<form onsubmit="submit" method="POST">
-    <label>speak: <input type="text" name="utterance" value="i'm at the chalkboard" onclick='javascript: this.value = ""' /></label>
-<input type="submit" value="Submit" />
-</form>
+
 
 </body>
 </html>
