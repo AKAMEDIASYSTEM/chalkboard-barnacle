@@ -1,0 +1,15 @@
+[Unit]
+Description=AKA tuned-resonator chalkboard-barnacle resonator (mDNS updater) service
+After=chalkboard.service
+Requires=chalkboard.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/chalkboard-barnacle/
+ExecStart=/usr/bin/python resonator.py
+Restart=always
+RestartSec=60
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
