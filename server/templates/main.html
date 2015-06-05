@@ -47,6 +47,11 @@
             width:25%;
             display:inline;
         }
+        footer{
+            font-size:14pt;
+            text-align:left;
+            padding-left:25px;
+        }
         {% for k in keywords %}
         #d{{k.split('|')[-1].split('.')[-1]}} {
             {% if int(k.split('|')[-1].split('.')[-1]) % 3 == 0 %}
@@ -73,8 +78,9 @@
 <div id="d{{k.split('|')[-1].split('.')[-1]}}"><strong>{{k.split('|')[0]}}</strong></div>
 {% end for %}
 
-
-
+<footer>
+Tuned-resonator is a nytlabs experiment in
+</footer>
 
 </body>
 </html>
