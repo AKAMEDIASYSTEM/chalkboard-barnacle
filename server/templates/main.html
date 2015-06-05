@@ -35,7 +35,7 @@
             margin:20px 0px 0px 0px;
         }
         {% for k in keywords %}
-        #{{k.split('|')[-1]}} {
+        #{{k.split('|')[-1].split('.')[-1]}} {
             background-color: rgb({{k.split('|')[-1]}},10,20);
         }
         {% end %}
