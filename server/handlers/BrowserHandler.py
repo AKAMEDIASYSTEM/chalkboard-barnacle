@@ -11,7 +11,7 @@ class BrowserHandler(BaseHandler):
 
     def get(self):
         MAX_MSGS = 10
-        loader = tornado.template.Loader('templates')
+        loader = tornado.template.Loader('server/templates')
         # n = self.get_argument('n', 3)
         db = self.settings['db']
         logging.debug('hit the BrowserHandler endpoint')
