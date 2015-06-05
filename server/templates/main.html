@@ -35,10 +35,13 @@
             margin:20px 0px 0px 0px;
         }
         form {
-            margin:20px;
+            margin:20px 0px 0px 10px;
         }
-        input {
+        input[type=text] {
             width:75%;
+        }
+        input[type=submit]{
+            width:25%;
         }
         {% for k in keywords %}
         #d{{k.split('|')[-1].split('.')[-1]}} {
