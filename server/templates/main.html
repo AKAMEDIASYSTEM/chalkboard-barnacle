@@ -10,6 +10,14 @@
         // form.action = form_action;
         console.log(form.action);
         }
+    function compute_color(ip){
+        // ip is a string of the ip address
+        // only the last octet will vary
+        // usu from 0-255 but DHCP on t-r
+        // only allocates 100-199
+        var addr = ip.split(".");
+        console.log(addr[3]);
+    }
     </script>
 
     <style type="text/css">
@@ -30,7 +38,8 @@
 <body>
 
 {% for k in keywords %}
-<strong>{{k.split('|')[0]}}</strong>
+<strong><style type="text/css" >{{k.split('|')[0]}}</style></strong>
+
 {% end for %}
 
 
