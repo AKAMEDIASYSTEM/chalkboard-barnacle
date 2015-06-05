@@ -8,4 +8,4 @@ class ResponseObject():
         else:
             self.data = {}
 
-        self.response = { "status" : self.status, "msg" : self.msg, "data" : self.data }
+        self.response = {"status": self.status, "msg": self.msg, "data": self.data}
