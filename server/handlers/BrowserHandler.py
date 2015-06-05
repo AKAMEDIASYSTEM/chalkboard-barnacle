@@ -4,7 +4,6 @@
 import logging
 import tornado
 from handlers.BaseHandler import BaseHandler
-from ResponseObject import ResponseObject
 
 
 class BrowserHandler(BaseHandler):
@@ -23,7 +22,9 @@ class BrowserHandler(BaseHandler):
         self.finish()
 
     def post(self):
+        MAX_MSGS = 10
         db = self.settings['db']
+        loader = tornado.template.Loader('server/templates')
         utterance = self.get_argument('utterance', None)
         print 'inside chalkboard-barnacle SubmitHandler', utterance
         if utterance is not None:
@@ -31,6 +32,8 @@ class BrowserHandler(BaseHandler):
                 db.lpush(str(utterance))
             except:
                 print 'there was a big problem with ', utterance
-        self.response = ResponseObject('200', 'Success')
-        self.write_response()
+        k = db.lrange('msgs', 0, MAX_MSGS)
+        if k is None:
+            k = ['no messages right now']
+        self.write(loader.load("main.html").generate(keywords=k))
         self.finish()
