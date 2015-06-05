@@ -17,7 +17,7 @@ class BrowserHandler(BaseHandler):
         logging.debug('hit the BrowserHandler endpoint')
         k = db.lrange('msgs', 0, MAX_MSGS)
         if k is None:
-            k = ['no messages right now']
+            k = ['no messages right now|192.168.1.1']
         # thinking about using color-of-text-background to
         # associate utterances with subnet addresses?
         # address is available at self.request.remote_ip

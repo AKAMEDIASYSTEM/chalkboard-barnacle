@@ -17,7 +17,7 @@
         // only allocates 100-199
         var addr = ip.split(".");
         console.log(addr[3]);
-        return ""
+        return addr
     }
     compute_color("192.168.0.777");
     </script>
@@ -35,13 +35,18 @@
             display: block;
             margin:20px 0px 0px 0px;
         }
+        {% for k in keywords %}
+        {{k.split('|')[-1]}} {
+            background-color: rgb({{k.split('|')[-1]}},10,20);
+        }
     </style>
 </head>
 <body>
 
 {% for k in keywords %}
 <!-- <strong><style type="text/css" >{{k.split('|')[0]}}</style></strong> -->
-<div id="compute_color({{k.split('|')[-1]}})"><strong>{{k.split('|')[0]}}</strong></div>
+<!-- <div id="compute_color({{k.split('|')[-1]}})"><strong>{{k.split('|')[0]}}</strong></div> -->
+<div id="{{k.split('|')[-1]}}"><strong>{{k.split('|')[0]}}</strong></div>
 {% end for %}
 
 
