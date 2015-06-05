@@ -4,6 +4,7 @@
 import logging
 import tornado
 from handlers.BaseHandler import BaseHandler
+from ResponseObject import ResponseObject
 
 
 class BrowserHandler(BaseHandler):
