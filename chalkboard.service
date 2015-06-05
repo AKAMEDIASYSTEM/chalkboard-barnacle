@@ -1,0 +1,15 @@
+[Unit]
+Description=AKA tuned-resonator chalkboard-barnacle server service
+After=redis-server.service
+Requires=redis-server.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/chalkboard-barnacle/
+ExecStart=/usr/bin/python server/server.py
+Restart=always
+RestartSec=5
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
