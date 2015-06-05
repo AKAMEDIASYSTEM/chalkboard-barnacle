@@ -20,3 +20,16 @@ class BrowserHandler(BaseHandler):
             k = ['no messages right now']
         self.write(loader.load("main.html").generate(keywords=k))
         self.finish()
+
+    def post(self):
+        db = self.settings['db']
+        utterance = self.get_argument('utterance', None)
+        print 'inside chalkboard-barnacle SubmitHandler', utterance
+        if utterance is not None:
+            try:
+                db.lpush(str(utterance))
+            except:
+                print 'there was a big problem with ', utterance
+        self.response = ResponseObject('200', 'Success')
+        self.write_response()
+        self.finish()

@@ -4,7 +4,7 @@
 import tornado.ioloop
 import tornado.web
 from handlers.BrowserHandler import BrowserHandler
-# from handlers.SubmitHandler import SubmitHandler
+from handlers.SubmitHandler import SubmitHandler
 import redis
 
 settings = {'debug': True}
@@ -13,7 +13,7 @@ db = redis.StrictRedis(host='localhost', port=6379, db=0)
 application = tornado.web.Application([
     # (r"/api", ApiHandler),
     (r"/", BrowserHandler),
-    # (r"/submit", SubmitHandler),
+    (r"/submit", SubmitHandler),
 ], db=db, **settings)
 
 if __name__ == "__main__":
@@ -48,10 +48,8 @@ on GET:
     shove these into a simple template file
     template file allows anyone to submit text as well
     that submittion POSTS to /submit
-    
+
 
 
 
 '''
-
-
