@@ -5,6 +5,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,500' rel='stylesheet' type='text/css'>
     <meta http-equiv="refresh" content="30">
+    <script type="text/javascript">
+    function get_action(form) {
+        form.action = form_action;
+        }
+    </script>
+
     <style type="text/css">
         body,html {
             font-family: 'Roboto', sans-serif;
@@ -25,11 +31,10 @@
 {% for k in keywords %}
 <strong>{{k}}</strong>
 {% end for %}
-<!-- A common form that includes input tags -->
-<form action="getform.php" method="get">
-    <label>First name: <input type="text" name="first_name" /></label><br />
-     <label>Last name: <input type="text" name="last_name" /></label><br />
-        <label>E-mail: <input type="email" name="user_email" /></label><br />
+
+
+<form onsubmit="get_action(this);">
+    <label>MSG: <input type="text" name="first_name" value="write here " /></label><br />
 <input type="submit" value="Submit" />
 </form>
 
