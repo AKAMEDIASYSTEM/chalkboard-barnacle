@@ -4,11 +4,11 @@
     <title>chalkboard</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,500' rel='stylesheet' type='text/css'>
-    <meta http-equiv="refresh" content="30">
+    <!-- <meta http-equiv="refresh" content="30"> -->
     <script type="text/javascript">
     function get_action(form) {
         form.action = form_action;
-        console.log(form_action);
+        console.log(form);
         }
     </script>
 
@@ -35,7 +35,7 @@
 
 
 <form onsubmit="get_action(this);">
-    <label>MSG: <input type="text" name="first_name" value="write here " /></label><br />
+    <label>MSG: <input type="text" name="utterance" value="write here " /></label>
 <input type="submit" value="Submit" />
 </form>
 
