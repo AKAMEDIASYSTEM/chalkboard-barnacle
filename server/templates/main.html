@@ -39,9 +39,11 @@
         }
         input[type=text] {
             width:75%;
+            display:inline;
         }
         input[type=submit]{
             width:25%;
+            display:inline;
         }
         {% for k in keywords %}
         #d{{k.split('|')[-1].split('.')[-1]}} {
