@@ -35,7 +35,7 @@
             margin:20px 0px 0px 0px;
         }
         {% for k in keywords %}
-        #{{k.split('|')[-1].split('.')[-1]}} {
+        #d{{k.split('|')[-1].split('.')[-1]}} {
             background-color: rgb({{k.split('|')[-1].split('.')[-1]}},10,20);
             color: rgb({{k.split('|')[-1].split('.')[-1]}},10,20);
         }
@@ -45,7 +45,7 @@
 <body>
 
 {% for k in keywords %}
-<div id="{{k.split('|')[-1].split('.')[-1]}}"><strong>{{k.split('|')[0]}}</strong></div>
+<div id="d{{k.split('|')[-1].split('.')[-1]}}"><strong>{{k.split('|')[0]}}</strong></div>
 {% end for %}
 
 
