@@ -34,6 +34,12 @@
             display: block;
             margin:20px 0px 0px 0px;
         }
+        form {
+            margin:20px;
+        }
+        input {
+            width:75%;
+        }
         {% for k in keywords %}
         #d{{k.split('|')[-1].split('.')[-1]}} {
             {% if int(k.split('|')[-1].split('.')[-1]) % 3 == 0 %}
