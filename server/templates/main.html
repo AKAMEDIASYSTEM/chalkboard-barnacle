@@ -25,7 +25,13 @@
 {% for k in keywords %}
 <strong>{{k}}</strong>
 {% end for %}
-<input type="text">
+<!-- A common form that includes input tags -->
+<form action="getform.php" method="get">
+    <label>First name: <input type="text" name="first_name" /></label><br />
+     <label>Last name: <input type="text" name="last_name" /></label><br />
+        <label>E-mail: <input type="email" name="user_email" /></label><br />
+<input type="submit" value="Submit" />
+</form>
 
 </body>
 </html>
