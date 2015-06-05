@@ -18,7 +18,11 @@ class BrowserHandler(BaseHandler):
         k = db.lrange('msgs', 0, MAX_MSGS)
         if k is None:
             k = ['no messages right now']
-        k.append(self.request.remote_ip)
+        # thinking about using color-of-text-background to
+        # associate utterances with subnet addresses?
+        # address is available at self.request.remote_ip
+        # k.append(self.request.remote_ip)
+
         self.write(loader.load("main.html").generate(keywords=k))
         self.finish()
 
@@ -27,6 +31,7 @@ class BrowserHandler(BaseHandler):
         db = self.settings['db']
         loader = tornado.template.Loader('server/templates')
         utterance = self.get_argument('utterance', None)
+        utterance = '|'.join(utterance, self.request.remote_ip)
         print 'inside chalkboard-barnacle SubmitHandler', utterance
         if utterance is not None:
             try:
