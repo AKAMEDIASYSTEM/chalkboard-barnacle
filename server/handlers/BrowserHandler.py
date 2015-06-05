@@ -29,7 +29,7 @@ class BrowserHandler(BaseHandler):
         print 'inside chalkboard-barnacle SubmitHandler', utterance
         if utterance is not None:
             try:
-                db.lpush(str(utterance))
+                db.lpush('msgs', str(utterance))
             except:
                 print 'there was a big problem with ', utterance
         k = db.lrange('msgs', 0, MAX_MSGS)
