@@ -44,7 +44,7 @@ cafe - "communicate"
 
 pseudocode:
 on GET:
-    search for 5 latest strings in redis "msgs" store
+    search for X latest strings in redis "msgs" store
     shove these into a simple template file
     template file allows anyone to submit text as well
     that submittion POSTS to /submit

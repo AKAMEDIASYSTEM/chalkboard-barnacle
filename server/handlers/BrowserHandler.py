@@ -30,8 +30,8 @@ class BrowserHandler(BaseHandler):
         MAX_MSGS = 10
         db = self.settings['db']
         loader = tornado.template.Loader('server/templates')
-        # utterance = self.get_argument('utterance', None)
-        utterance = '|'.join([self.get_argument('utterance', None),self.request.remote_ip])
+        # entangle IP address w utterance
+        utterance = '|'.join([self.get_argument('utterance', None), self.request.remote_ip])
         print 'inside chalkboard-barnacle SubmitHandler', utterance
         if utterance is not None:
             try:

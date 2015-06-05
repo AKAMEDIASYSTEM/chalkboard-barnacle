@@ -30,7 +30,7 @@
 <body>
 
 {% for k in keywords %}
-<strong>{{k}}</strong>
+<strong>{{k.split('|')[0]}}</strong>
 {% end for %}
 
 
