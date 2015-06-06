@@ -9,7 +9,10 @@ from handlers.BaseHandler import BaseHandler
 class BrowserHandler(BaseHandler):
     '''HTML display of the chalkboard'''
 
+# define a timeout object here
+
     def get(self):
+        # here you should cancel any pending timeout
         MAX_MSGS = 10
         loader = tornado.template.Loader('server/templates')
         # n = self.get_argument('n', 3)
@@ -24,6 +27,10 @@ class BrowserHandler(BaseHandler):
         # k.append(self.request.remote_ip)
 
         self.write(loader.load("main.html").generate(keywords=k))
+        # here you should activate any pending timeout
+        # (when timeout occurs, we write the time in a nicely-formatted string to the redis store)
+        # this means utterances expire once 10 timeouts have occurred
+        # which means nobody has been active for 10*timeout minutes
         self.finish()
 
     def post(self):
