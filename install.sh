@@ -1,3 +1,4 @@
+echo 'installing chalkboard-barnacle'
 chmod +x expire.sh
 cp chalkboard.service chalkboard-expire.service chalkboard-resonator.service /etc/systemd/system
 cp avahi-resonator.service /etc/avahi/services/
