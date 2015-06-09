@@ -1,0 +1,16 @@
+[Unit]
+Description=AKA tuned-resonator chalkboard-barnacle expirer service
+After=chalkboard.service
+Requires=chalkboard.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/chalkboard-barnacle/
+ExecStart=/usr/bin/bash expire.sh
+Restart=always
+RestartSec=600
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+
