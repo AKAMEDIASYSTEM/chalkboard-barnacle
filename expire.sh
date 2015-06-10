@@ -1,2 +1,2 @@
-#!/bin/ bash
+#! /bin/bash
 curl -d "utterance= . . . " localhost
