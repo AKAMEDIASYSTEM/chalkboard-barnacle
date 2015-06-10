@@ -1,3 +1,4 @@
+#!/bin/ bash
 echo 'installing chalkboard-barnacle now'
 chmod +x expire.sh
 cp chalkboard.service chalkboard-expire.service chalkboard-resonator.service /etc/systemd/system

@@ -6,7 +6,7 @@ Requires=chalkboard.service
 [Service]
 Type=simple
 WorkingDirectory=/root/chalkboard-barnacle/
-ExecStart=/usr/bin/bash expire.sh
+ExecStart=/bin/bash expire.sh
 Restart=always
 RestartSec=600
 KillMode=process
