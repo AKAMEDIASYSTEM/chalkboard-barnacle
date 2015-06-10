@@ -1,2 +1,7 @@
 #! /bin/bash
-curl -d "utterance= . . . " localhost
+# Define a timestamp function
+timestamp() {
+  date +"%T"
+}
+
+curl -d "utterance= timestamp()" localhost
