@@ -1,0 +1,1 @@
+curl -d "utterance= . . . " localhost
