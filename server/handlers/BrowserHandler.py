@@ -45,7 +45,7 @@ class BrowserHandler(BaseHandler):
                 db.lpush('msgs', str(utterance))
             except:
                 print 'there was a big problem with ', utterance
-            db.ltrim('msgs', 0, 15)  # trim with every submission, FIFO not expiring for now
+            db.ltrim('msgs', 0, MAX_MSGS)  # trim with every submission, FIFO not expiring for now
         k = db.lrange('msgs', 0, MAX_MSGS)
         if k is None:
             k = ['no messages right now']
