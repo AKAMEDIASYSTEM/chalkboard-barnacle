@@ -4,4 +4,4 @@ timestamp() {
   date +"%T"
 }
 
-curl -d "utterance=$(date)" localhost
+curl -d "utterance=$(timestamp)" http://0.0.0.0:8888
