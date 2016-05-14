@@ -34,7 +34,7 @@ tt_type._setText('_http._tcp')
 tt_port = objectify.SubElement(t_service, 'port')
 tt_port._setText('80')
 tt_txtrecord = objectify.SubElement(t_service, 'txt-record')
-d = 'path=/'+zeitgeist
+d = 'path=/'+str(zeitgeist)
 re.sub(u'[^\u0020-\uD7FF\u0009\u000A\u000D\uE000-\uFFFD\u10000-\u10FFFF]+', '', d)
 tt_txtrecord._setText(d)
 objectify.deannotate(root, cleanup_namespaces=True)
