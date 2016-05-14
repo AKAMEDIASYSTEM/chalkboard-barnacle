@@ -17,7 +17,7 @@ application = tornado.web.Application([
 ], db=db, **settings)
 
 if __name__ == "__main__":
-    application.listen(8888)
+    application.listen(80)
     tornado.ioloop.IOLoop.instance().start()
 
 
@@ -33,7 +33,7 @@ no photos, but make it so photos-of-space
 can be added later with a webcam or something
 
 
-hammeraspce -> utility? strict utility?
+hammerspace -> utility? strict utility?
 
 speedtest - useful, immediate-environment thing
 temperature - not much you can do about knowing the temp in the Here and Now
@@ -47,7 +47,7 @@ on GET:
     search for X latest strings in redis "msgs" store
     shove these into a simple template file
     template file allows anyone to submit text as well
-    that submittion POSTS to /submit
+    that submission POSTS to /submit
 
 
 
